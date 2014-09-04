@@ -1,0 +1,35 @@
+%h1= @document.original_name
+
+%dl
+  %dt Key
+  %dd= @document.key
+
+  %dt Started at
+  %dd= @document.list.started_at
+
+%table
+  %thead
+    %tr
+      %td E-mail
+      %td Act
+      %td Display Name
+      %td Decision
+      %td Signed at
+  %tbody
+    - @document.list.signatures.each do |signature|
+      %tr
+        %td= signature.email
+        %td= signature.act
+        %td= signature.display_name
+        %td= signature.decision
+        %td= signature.signed_at
+
+%form(action="/widget" method="post")
+  %input(type="hidden" name="key" value="#{@document.key}")
+
+  %label(for="email") Signer e-mail
+  %input(id="email" name="email" type="email")
+
+  %input(type="submit") View inside widget
+
+%a(href="/") Back

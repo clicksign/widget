@@ -1,0 +1,10 @@
+%form(action="/" method="post" enctype="multipart/form-data")
+  %label(for="archive") File
+  %input(id="archive" name="archive" type="file")
+
+  %input(type="submit" value="Upload")
+
+%ul
+  - @documents.each do |document|
+    %li
+      %a(href="/#{document.key}")= document.original_name
