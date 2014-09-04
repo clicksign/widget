@@ -79,7 +79,6 @@ end
 
 # Index all documents related to access token
 get "/" do
-  binding.pry
   @documents = get_documents
   haml :index
 end
