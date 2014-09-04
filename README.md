@@ -1,22 +1,29 @@
-# Cliente API
+# Clicksign Widget
 
-Para iniciar o cliente de exemplo da api, será necessário você ter instalado:
+Integre a Clicksign em seu aplicativo web com nosso widget.
+
+## Iniciando o servidor de exemplo
+
+Certifique-se de que estão instalados:
 
 - Ruby 2.1.2
 - Rubygems
 - Bundler
 
-Com isto, você poderá executar o `bundle` dentro do diretório **examples** e
-todas as dependências serã instaladas.  Para iniciar o servidor de exemplo você
-precisará de um *access_token* configurado servidor que deseja enviar as
-requisições.
-
-Uma vez com as depências instaladas e com o *access_token* basta executar o
-seguinte comando dentro do diretório `examples`.
+Instale as dependências:
 
 ```bash
-ACCESS_TOKEN=aqui-vem-o-token ruby api-client.rb
+$ cd example/
+$ bundle install
 ```
 
-Um servidor na porta 4567 será inicializado e nas configurações padrão você
-poderá acessa-lo em [localhost:4567](http://localhost:4567).
+Para iniciar o servidor de exemplo, você precisará de um `ACCESS_TOKEN` configurado no servidor para o qual deseja enviar as requisições. O `ACCESS_TOKEN` é disponibilizado pela Clicksign para desenvolvedores autorizados.
+
+Após a configuração das dependências e do `ACCESS_TOKEN`, inicie o servidor:
+
+```bash
+$ cd example/
+$ ACCESS_TOKEN=seu-token ruby api-client.rb
+```
+
+O servidor de exemplo estará disponível em `http://localhost:4567`.
