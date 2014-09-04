@@ -8,8 +8,9 @@ require 'pry'
 
 configure do
   set :access_token, ENV['ACCESS_TOKEN']
-  set :api_host, ENV['API_HOST'] || "https://api.clicksign-demo.com"
-  set :widget_url, ENV['WIDGET_URL'] || "http://desk.clicksign-demo.com/widget"
+  set :host, ENV['HOST'] || "clicksign-demo.com"
+  set :api_host, "api.#{settings.host}"
+  set :desk_host, "desk.#{settings.host}"
 end
 
 helpers do
@@ -78,6 +79,7 @@ end
 
 # Index all documents related to access token
 get "/" do
+  binding.pry
   @documents = get_documents
   haml :index
 end
