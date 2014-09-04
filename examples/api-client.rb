@@ -8,9 +8,10 @@ require 'pry'
 
 configure do
   set :access_token, ENV['ACCESS_TOKEN']
+  set :protocol, ENV['PROTOCOL'] || "https"
   set :host, ENV['HOST'] || "clicksign-demo.com"
-  set :api_host, "api.#{settings.host}"
-  set :widget_host, "widget.#{settings.host}"
+  set :api_host, "#{settings.protocol}://api.#{settings.host}"
+  set :widget_host, "#{settings.protocol}://widget.#{settings.host}"
 end
 
 helpers do
