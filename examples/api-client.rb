@@ -109,8 +109,8 @@ post %r{/(\h{4}-\h{4}-\h{4}-\h{4})/list} do |key|
 
   begin
     @document = create_list(key, signers)
-  # rescue
-  #   redirect to("/#{key}"), 500
+  rescue
+    redirect to("/#{key}"), 500
   else
     redirect to("/#{@document.key}"), 303
   end
