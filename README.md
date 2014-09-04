@@ -13,7 +13,7 @@ Certifique-se de que estão instalados:
 Instale as dependências:
 
 ```bash
-$ cd example/
+$ cd examples/
 $ bundle install
 ```
 
@@ -22,7 +22,7 @@ Para iniciar o servidor de exemplo, você precisará de um `ACCESS_TOKEN` config
 Após a configuração das dependências e do `ACCESS_TOKEN`, inicie o servidor:
 
 ```bash
-$ cd example/
+$ cd examples/
 $ ACCESS_TOKEN=seu-token ruby api-client.rb
 ```
 
