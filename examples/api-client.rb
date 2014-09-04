@@ -119,6 +119,7 @@ end
 
 # Show a document widget
 post %r{/(\h{4}-\h{4}-\h{4}-\h{4})/widget} do |key|
+  @key = key
   @email = params[:email]
   haml :widget
 end
