@@ -10,7 +10,7 @@ configure do
   set :access_token, ENV['ACCESS_TOKEN']
   set :host, ENV['HOST'] || "clicksign-demo.com"
   set :api_host, "api.#{settings.host}"
-  set :desk_host, "desk.#{settings.host}"
+  set :widget_host, "widget.#{settings.host}"
 end
 
 helpers do
@@ -120,5 +120,6 @@ end
 
 # Show a document widget
 post %r{/(\h{4}-\h{4}-\h{4}-\h{4})/widget} do |key|
+  @email = params[:email]
   haml :widget
 end
