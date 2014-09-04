@@ -24,12 +24,17 @@
         %td= signature.decision
         %td= signature.signed_at
 
-%form(action="/widget" method="post")
-  %input(type="hidden" name="key" value="#{@document.key}")
+- unless @document.list.started_at
+  %form(action="/#{@document.key}/list" method="post")
+    %label(for="emails") Signers and actions, one per line
+    %textarea(id="emails" name="emails" placeholder="john.doe@example,sign")
 
-  %label(for="email") Signer e-mail
-  %input(id="email" name="email" type="email")
+    %input(type="submit") Request signatures
+- else
+  %form(action="/#{@document.key}/widget" method="post")
+    %label(for="email") Signer e-mail
+    %input(id="email" name="email" type="email")
 
-  %input(type="submit") View inside widget
+    %input(type="submit") View inside widget
 
 %a(href="/") Back
