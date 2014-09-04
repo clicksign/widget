@@ -7,34 +7,34 @@
   %dt Started at
   %dd= @document.list.started_at
 
-%table
-  %thead
-    %tr
-      %td E-mail
-      %td Act
-      %td Display Name
-      %td Decision
-      %td Signed at
-  %tbody
-    - @document.list.signatures.each do |signature|
-      %tr
-        %td= signature.email
-        %td= signature.act
-        %td= signature.display_name
-        %td= signature.decision
-        %td= signature.signed_at
-
 - unless @document.list.started_at
   %form(action="/#{@document.key}/list" method="post")
     %label(for="emails") Signers and actions, one per line
     %textarea(id="emails" name="emails" placeholder="john.doe@example,sign")
 
-    %input(type="submit") Request signatures
+    %input(type="submit" value="Request signatures")
 - else
+  %table
+    %thead
+      %tr
+        %td E-mail
+        %td Act
+        %td Display Name
+        %td Decision
+        %td Signed at
+    %tbody
+      - @document.list.signatures.each do |signature|
+        %tr
+          %td= signature.email
+          %td= signature.act
+          %td= signature.display_name
+          %td= signature.decision
+          %td= signature.signed_at
+
   %form(action="/#{@document.key}/widget" method="post")
     %label(for="email") Signer e-mail
     %input(id="email" name="email" type="email")
 
-    %input(type="submit") View inside widget
+    %input(type="submit" value="View inside widget")
 
 %a(href="/") Back
