@@ -19,4 +19,4 @@ ACCESS_TOKEN=aqui-vem-o-token ruby api-client.rb
 ```
 
 Um servidor na porta 4567 será inicializado e nas configurações padrão você
-poderá acessa-lo em (localhost:4567)[http://locahost:4567].
+poderá acessa-lo em [localhost:4567](http://locahost:4567).
