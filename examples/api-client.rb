@@ -99,7 +99,7 @@ post "/" do
 end
 
 # Show a specific document
-get %r{/(\h{4}-\h{4}-\h{4}-\h{4})} do |key|
+get %r{/(\h{4}-\h{4}-\h{4}-\h{4})$} do |key|
   @document = get_document(key)
   haml :show
 end
@@ -119,8 +119,9 @@ post %r{/(\h{4}-\h{4}-\h{4}-\h{4})/list} do |key|
 end
 
 # Show a document widget
-post %r{/(\h{4}-\h{4}-\h{4}-\h{4})/widget} do |key|
-  @key = key
+get %r{/(\h{4}-\h{4}-\h{4}-\h{4})/widget} do |key|
+  @document = get_document(key)
   @email = params[:email]
+
   haml :widget
 end

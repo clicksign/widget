@@ -1,1 +1,22 @@
-%iframe(src="#{settings.widget_host}/documents/#{@key}?email=#{@email}" width="800px" height="600px" style="border: 1px solid #999; border-radius: 3px;")
+%h1= @document.original_name
+
+%dl
+  %dt Key
+  %dd= @document.key
+
+  %dt Started at
+  %dd= @document.list.started_at
+
+%div#base
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+%script(src="/javascripts/clicksign.js" type="text/javascript")
+
+:coffee
+  clicksign.configure
+    base: "base"
+    email: "#{@email}"
+    key: "#{@document.key}"
+    host: "#{settings.widget_host}"
+    width: 1000
+    height: 1000
