@@ -8,7 +8,7 @@ clean_height = min_or_defaults(300, 100)
 clean_width = min_or_defaults(300, 100)
 clean_host = (source) -> defaults(source, "https://widget.clicksign-demo.com")
 
-url_for = (host, key, email) -> "#{host}/documents/#{key}?email=#{email}"
+url_for = (host, key, email, origin) -> "#{host}/documents/#{key}?email=#{email}&origin=#{origin}"
 
 create_iframe = (source, height, width) ->
   iframe = document.createElement("iframe")
@@ -32,9 +32,12 @@ configure = (options) ->
   email = options.email
   key = options.key
 
-  source = url_for(host, key, email)
+  source = url_for(host, key, email, window.location.origin)
   iframe = create_iframe(source, width, height)
 
   attach_element(base, iframe)
+
+  callback = options.callback || ->
+  window.addEventListener("message", callback)
 
 @clicksign ||= configure: configure

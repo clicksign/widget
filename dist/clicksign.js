@@ -30,8 +30,8 @@
     return defaults(source, "https://widget.clicksign-demo.com");
   };
 
-  url_for = function(host, key, email) {
-    return "" + host + "/documents/" + key + "?email=" + email;
+  url_for = function(host, key, email, origin) {
+    return "" + host + "/documents/" + key + "?email=" + email + "&origin=" + origin;
   };
 
   create_iframe = function(source, height, width) {
@@ -50,16 +50,18 @@
   };
 
   configure = function(options) {
-    var base, email, height, host, iframe, key, source, width;
+    var base, callback, email, height, host, iframe, key, source, width;
     height = clean_height(options.height);
     width = clean_width(options.height);
     host = clean_host(options.host);
     base = options.base;
     email = options.email;
     key = options.key;
-    source = url_for(host, key, email);
+    source = url_for(host, key, email, window.location.origin);
     iframe = create_iframe(source, width, height);
-    return attach_element(base, iframe);
+    attach_element(base, iframe);
+    callback = options.callback || function() {};
+    return window.addEventListener("message", callback);
   };
 
   this.clicksign || (this.clicksign = {

@@ -13,6 +13,9 @@
 %script(src="/javascripts/clicksign.js" type="text/javascript")
 
 :coffee
+  callback = (event) ->
+    alert "Callback called with: \#{event.data}"
+
   clicksign.configure
     base: "base"
     email: "#{@email}"
@@ -20,3 +23,4 @@
     host: "#{settings.widget_host}"
     width: 1000
     height: 1000
+    callback: callback
