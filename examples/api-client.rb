@@ -10,8 +10,8 @@ configure do
   set :access_token, ENV['ACCESS_TOKEN']
   set :protocol, ENV['PROTOCOL'] || "https"
   set :host, ENV['HOST'] || "clicksign-demo.com"
-  set :api_host, "#{settings.protocol}://api.#{settings.host}"
-  set :widget_host, "#{settings.protocol}://widget.#{settings.host}"
+  set :api_host, "api.#{settings.host}"
+  set :widget_host, "widget.#{settings.host}"
 end
 
 helpers do
@@ -35,8 +35,12 @@ helpers do
     end
   end
 
+  def api_domain
+    "#{settings.protocol}://#{settings.api_host}"
+  end
+
   def api_url(*path)
-    ([settings.api_host, "v1", "documents"] + path).join("/")
+    ([api_domain, "v1", "documents"] + path).join("/")
   end
 
   def api_params(params = {})
