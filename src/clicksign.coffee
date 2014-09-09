@@ -1,26 +1,23 @@
-WIDTH_MIN = 600
-WIDTH_DEFAULT = 800
-HEIGHT_MIN = 500
-HEIGHT_DEFAULT = 600
-PROTOCOL_DEFAULT = "https"
-HOST_DEFAULT = "widget.clicksign-demo.com"
-ORIGIN = @location.origin
-DOCUMENT = @document
+PROTOCOL = "https"
+HOST = "widget.clicksign-demo.com"
+WIDTH = { MIN: 600, DEFAULT: 800 }
+HEIGHT = { MIN: 500, DEFAULT: 600 }
 
-defaults = (d) -> (v) -> v || d
+getElementById = (name) -> document.getElementById(name)
+addEventListener = (callback) -> window.addEventListener("message", callback)
 
-protocol_for = defaults(PROTOCOL_DEFAULT)
-host_for = defaults(HOST_DEFAULT)
-
-domain_for = (p, h) -> "#{protocol_for(p)}://#{host_for(h)}"
-document_path = (k, e) -> "/documents/#{k}?email=#{e}&origin=#{ORIGIN}"
+origin = (protocol, host) "#{protocol || PROTOCOL}://#{host || HOST}"
+document_path = (k, e) -> "/documents/#{k}?email=#{e}&origin=#{location.origin}"
 
 create_iframe = (source, width, height) ->
   min = (m) -> (v) -> if v < m then m else v
-  normalize = (m, d) -> (v) -> min(m)(defaults(d)(v))
+  normalize = (m, d) -> (v) -> min(m)(v || d)
 
-  normalize_height = normalize(HEIGHT_DEFAULT, HEIGHT_DEFAULT)
-  normalize_width = normalize(WIDTH_DEFAULT, WIDTH_DEFAULT)
+  width ||= WIDTH.DEFAULT
+  heidht ||= HEIGHT.DEFAULT
+
+  normalize_width = normalize(WIDTH.MIN, WIDTH.DEFAULT)
+  normalize_height = normalize(HEIGHT.MIN, HEIGHT.DEFAULT)
 
   iframe = document.createElement("iframe")
   iframe.setAttribute('src', source)
@@ -29,18 +26,19 @@ create_iframe = (source, width, height) ->
   iframe
 
 attach_element = (container, element) ->
-  target = DOCUMENT.getElementById(container)
+  target = getElementById(container)
   target.appendChild(element)
 
 configure = (options) ->
   domain = domain_for(options.protocol, options.host)
   path = document_path(options.key, options.email)
+  source = domain + path
 
-  iframe = create_iframe(domain + path, options.width, options.height)
+  iframe = create_iframe(source, options.width, options.height)
 
   attach_element(options.container, iframe)
 
   callback = options.callback || ->
-  window.addEventListener("message", callback)
+  addEventListener("message", options.callback || ->)
 
 @clicksign ||= configure: configure
