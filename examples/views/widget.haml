@@ -23,8 +23,11 @@
 
   clicksign.configure
     container: "container"
-    email: "#{@email}"
     key: "#{@document.key}"
     protocol: "#{settings.protocol}"
     host: "#{settings.widget_host}"
+    signer:
+      email: "#{@email}"
+      display_name: "John Doe"
+      documentation: "01234567890"
     callback: callback
