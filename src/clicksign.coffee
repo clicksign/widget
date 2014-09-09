@@ -1,5 +1,5 @@
 PROTOCOL = "https"
-HOST = "widget.clicksign-demo.com"
+HOST = "widget.clicksign.com"
 WIDTH = { MIN: 600, DEFAULT: 800 }
 HEIGHT = { MIN: 500, DEFAULT: 600 }
 
