@@ -28,9 +28,9 @@ create_iframe = (source, width, height) ->
   iframe.setAttribute('height', normalize_height(height))
   iframe
 
-attach_element = (base, element) ->
-  target = DOCUMENT.getElementById(base)
-  DOCUMENT.body.insertBefore(element, target.nextSibling)
+attach_element = (container, element) ->
+  target = DOCUMENT.getElementById(container)
+  target.appendChild(element)
 
 configure = (options) ->
   domain = domain_for(options.protocol, options.host)
@@ -38,7 +38,7 @@ configure = (options) ->
 
   iframe = create_iframe(domain + path, options.width, options.height)
 
-  attach_element(options.base, iframe)
+  attach_element(options.container, iframe)
 
   callback = options.callback || ->
   window.addEventListener("message", callback)

@@ -61,10 +61,10 @@
     return iframe;
   };
 
-  attach_element = function(base, element) {
+  attach_element = function(container, element) {
     var target;
-    target = DOCUMENT.getElementById(base);
-    return DOCUMENT.body.insertBefore(element, target.nextSibling);
+    target = DOCUMENT.getElementById(container);
+    return target.appendChild(element);
   };
 
   configure = function(options) {
@@ -72,7 +72,7 @@
     domain = domain_for(options.protocol, options.host);
     path = document_path(options.key, options.email);
     iframe = create_iframe(domain + path, options.width, options.height);
-    attach_element(options.base, iframe);
+    attach_element(options.container, iframe);
     callback = options.callback || function() {};
     return window.addEventListener("message", callback);
   };
