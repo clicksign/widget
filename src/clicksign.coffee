@@ -4,6 +4,7 @@ WIDTH = { MIN: 600, DEFAULT: 800 }
 HEIGHT = { MIN: 500, DEFAULT: 600 }
 
 getElementById = (name) -> document.getElementById(name)
+createElement = (element) -> document.createElement(element)
 addEventListener = (callback) -> window.addEventListener("message", callback)
 
 options_for = (options) -> ("#{k}=#{v}" for k, v of options).join("&")
@@ -21,7 +22,7 @@ create_iframe = (source, width, height) ->
   normalize_width = normalize(WIDTH.MIN, WIDTH.DEFAULT)
   normalize_height = normalize(HEIGHT.MIN, HEIGHT.DEFAULT)
 
-  iframe = document.createElement("iframe")
+  iframe = createElement("iframe")
   iframe.setAttribute('src', source)
   iframe.setAttribute('width', normalize_width(width))
   iframe.setAttribute('height', normalize_height(height))
