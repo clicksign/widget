@@ -24,8 +24,8 @@
     return document.createElement(element);
   };
 
-  addEventListener = function(callback) {
-    return window.addEventListener("message", callback);
+  addEventListener = function(type, callback) {
+    return window.addEventListener(type, callback);
   };
 
   options_for = function(options) {
@@ -89,15 +89,14 @@
   };
 
   configure = function(options) {
-    var callback, iframe, origin, path, query, source;
+    var iframe, origin, path, query, source;
     origin = origin_for(options.protocol, options.host);
     path = path_for(options.key);
     query = query_for(options.signer);
     source = origin + path + query;
     iframe = create_iframe(source, options.width, options.height);
     attach_element(options.container, iframe);
-    callback = options.callback || function() {};
-    return addEventListener("message", options.callback || function() {});
+    return addEventListener('message', options.callback || function() {});
   };
 
   this.clicksign || (this.clicksign = {

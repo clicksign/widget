@@ -5,7 +5,7 @@ HEIGHT = { MIN: 500, DEFAULT: 600 }
 
 getElementById = (name) -> document.getElementById(name)
 createElement = (element) -> document.createElement(element)
-addEventListener = (callback) -> window.addEventListener("message", callback)
+addEventListener = (type, callback) -> window.addEventListener(type, callback)
 
 options_for = (options) -> ("#{k}=#{v}" for k, v of options).join("&")
 origin_for = (protocol, host) -> "#{protocol || PROTOCOL}://#{host || HOST}"
@@ -39,8 +39,6 @@ configure = (options) ->
   iframe = create_iframe(source, options.width, options.height)
 
   attach_element(options.container, iframe)
-
-  callback = options.callback || ->
-  addEventListener("message", options.callback || ->)
+  addEventListener('message', options.callback || ->)
 
 @clicksign ||= configure: configure
