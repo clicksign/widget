@@ -76,6 +76,7 @@
     iframe.setAttribute('src', source);
     iframe.setAttribute('width', normalize_width(width));
     iframe.setAttribute('height', normalize_height(height));
+    iframe.setAttribute('style', 'border: 1px solid #999; border-radius: 3px;');
     return iframe;
   };
 
