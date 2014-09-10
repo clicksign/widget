@@ -16,9 +16,6 @@ create_iframe = (source, width, height) ->
   min = (m) -> (v) -> if v < m then m else v
   normalize = (m, d) -> (v) -> min(m)(v || d)
 
-  width ||= WIDTH.DEFAULT
-  height ||= HEIGHT.DEFAULT
-
   normalize_width = normalize(WIDTH.MIN, WIDTH.DEFAULT)
   normalize_height = normalize(HEIGHT.MIN, HEIGHT.DEFAULT)
 

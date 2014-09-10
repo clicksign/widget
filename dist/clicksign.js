@@ -72,8 +72,6 @@
         return min(m)(v || d);
       };
     };
-    width || (width = WIDTH.DEFAULT);
-    height || (height = HEIGHT.DEFAULT);
     normalize_width = normalize(WIDTH.MIN, WIDTH.DEFAULT);
     normalize_height = normalize(HEIGHT.MIN, HEIGHT.DEFAULT);
     iframe = createElement("iframe");
