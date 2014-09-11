@@ -3,14 +3,23 @@ HOST = "widget.clicksign.com"
 WIDTH = { MIN: 600, DEFAULT: 800 }
 HEIGHT = { MIN: 500, DEFAULT: 600 }
 
+window = @
+
 getElementById = (name) -> document.getElementById(name)
 createElement = (element) -> document.createElement(element)
-addEventListener = (type, callback) -> window.addEventListener(type, callback)
+addEventListener = (callback) ->
+  if window.addEventListener
+    window.addEventListener('message', callback)
+  else
+    window.attachEvent('onmessage', callback)
 
-options_for = (options) -> ("#{k}=#{v}" for k, v of options).join("&")
-origin_for = (protocol, host) -> "#{protocol || PROTOCOL}://#{host || HOST}"
+origin = location.origin || "#{location.protocol}//#{location.host}"
+
+protocol_for = (protocol) -> (protocol || PROTOCOL) + "://"
+host_for = (host) -> host || HOST
 path_for = (key) -> "/documents/#{key}"
-query_for = (signer = {}) -> "?origin=#{location.origin}&" + options_for(signer)
+query_for = (signer = {}) ->
+  "?origin=#{origin}&" + ("#{k}=#{v}" for k, v of signer).join("&")
 
 create_iframe = (source, width, height) ->
   min = (m) -> (v) -> if v < m then m else v
@@ -31,14 +40,16 @@ attach_element = (container, element) ->
   target.appendChild(element)
 
 configure = (options) ->
-  origin = origin_for(options.protocol, options.host)
+  protocol = protocol_for(options.protocol)
+  host = host_for(options.host)
   path = path_for(options.key)
   query = query_for(options.signer)
-  source = origin + path + query
+
+  source = protocol + host + path + query
 
   iframe = create_iframe(source, options.width, options.height)
 
   attach_element(options.container, iframe)
-  addEventListener('message', options.callback || ->)
+  addEventListener(options.callback || ->)
 
 @clicksign ||= configure: configure
