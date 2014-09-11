@@ -62,7 +62,7 @@ helpers do
   end
 
   def api_create_list(key, signers)
-    RestClient.post(api_url(key, 'list') + "?access_token=#{settings.access_token}", { signers: signers }.to_json, content_type: "json", accept: "json")
+    RestClient.post(api_url(key, 'list') + "?access_token=#{settings.access_token}", { signers: signers, skip_email: true }.to_json, content_type: "json", accept: "json")
   end
 
   def get_documents
