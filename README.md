@@ -10,9 +10,50 @@
 
 # <a name="introducao"></a>Introdução
 
+Muitas vezes um documento precisa ser assinado dentro de um ponto específico de
+um determinado fluxo de uma aplicação.  Para isso a Clicksign desenvolveu um
+componente que pode ser instalado dentro de outras páginas eletrônicas.  Este
+tipo de componente é tradicionalmente chamado de **widget**.
+
+# <a name="funcionamento"></a>Funcionamento
+
+O **widget** é composto de 3 partes:
+
+1. Um biblioteca _javascript_ que você deverá adicionar à sua página;
+2. Um _iframe_ que será criado pela biblioteca acima no _DOM_ de sua página;
+3. Um código _HTML_ que será o corpo do _iframe_ acima;
+
+![step 1](https://github.com/clicksign/widget/blob/master/images/flow-1.png)
+![step 2](https://github.com/clicksign/widget/blob/master/images/flow-2.png)
+![step 3](https://github.com/clicksign/widget/blob/master/images/flow-3.png)
+![step 4](https://github.com/clicksign/widget/blob/master/images/flow-4.png)
+![step 5](https://github.com/clicksign/widget/blob/master/images/flow-5.png)
 
 # <a name="suporte"></a>Suporte
-# <a name="funcionamento"></a>Funcionamento
+
+Devido ao custo de desenvolvimento e possível perda de usabilidade, o **widget**
+da Clicksign oferece suporte oficial apenas aos navegadores mais utilizados no
+mercado.  Realizamos testes de compatibilidade com os seguintes navegadores
+abaixo listados:
+
+- Internet Explorer 9
+- Internet Explorer 10 
+- Internet Explorer 11
+- Chrome 36
+- Chrome 37
+- Firefox 31
+- Firefox 32
+- Safari 7
+- Opera 23
+- Opera 24
+
+Se você utiliza algum navegador que não conste nesta lista não significa que o
+**widget** da Clicksign não funcionará adequadamente, significa apenas que não
+realizamos testes de compatibilidade com o navegador.  Caso seja necessário que
+a Clicksign suporte oficialmente o navagador, você pode solicitar que a equipe
+de desenvolvimente o adicione como um navegador homologado através de
+suporte@clicksign.com.
+
 # <a name="autenticacao"></a>Autenticação
 # <a name="opcoes"></a>Opções
 # <a name="versao"></a>Versão
