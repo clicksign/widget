@@ -17,16 +17,56 @@ tipo de componente é tradicionalmente chamado de **widget**.
 
 # <a name="funcionamento"></a>Funcionamento
 
-O **widget** é composto de 3 partes:
+O _widget_ é composto de 3 partes:
 
 1. Um biblioteca _javascript_ que você deverá adicionar à sua página;
 2. Um _iframe_ que será criado pela biblioteca acima no _DOM_ de sua página;
 3. Um código _HTML_ que será o corpo do _iframe_ acima;
 
+## Passo 1: Carregar a biblioteca fornecida pela Clicksign
+
+A biblioteca _javascript_ da Clicksign precisa ser incluída no corpo da página.
+O arquivo pode ser copiado para seu próprio domínio ou você pode utilizar a CDN
+da Clicksign.  Recomendamos utilizar a CDN da Clicksign pois vocês será
+beneficiado pelas correções automáticas que efetuamos ao descobrir alguma falha
+na biblioteca.  Todas as correções visam manter compatibilidade dentro da mesma
+versão.  Uma alteração que quebre compatibilidade só pode ser efetuada em uma
+nova versão da biblioteca.  Mais detalhas em [versão](#versao).
+
 ![step 1](https://github.com/clicksign/widget/blob/master/images/flow-1.png)
+
+## Passo 2: Carregar a biblioteca fornecida pela Clicksign
+
+A biblioteca da Clicksign irá cria um objeto `clicksign` dentro do escopo
+padrão, `window`.  Para que o _widget_ seja montado dentro da página você
+necessita chamar a função `configure` no objeto `clicksign`.  Você pode conferir
+os parâmetros da função `configure` em [opções](#opcoes).
+
 ![step 2](https://github.com/clicksign/widget/blob/master/images/flow-2.png)
+
+Ao chamar a função `configure`, será adicionado um _iframe_ dentro de um dos
+elementos da página.  O _iframe_ irá carregar o conteúdo da Clicksign, este
+contúdo irá executar em contexto próprio, portanto nem o _widget_, nem a página
+que o carrega, podem manipular os elementos do outro.
+
 ![step 3](https://github.com/clicksign/widget/blob/master/images/flow-3.png)
+
+O _widget_ possui fluxo de navegação independete, isto possibilita à Clicksign
+realizar as assinaturas em múltiplas requisições.
+
 ![step 4](https://github.com/clicksign/widget/blob/master/images/flow-4.png)
+
+## Passo 3: Capturando uma assinatura
+
+Para aplicações que necessitam _reagir_ a um evento de assinatura, o _widget_
+fornece uma chamada de _callback_ que será executada dentro do contexto da
+página.  Esta é a função do parâmetro `callback`.  Você pode conferir a
+utilização do parâmetro `callback` em [opções](#opcoes).
+
+O _callbac_ é implementado utilizando `postMessage`, por este motivo os
+navegadores deverão suportar esta tecnologia para que o _callback_ possa
+ocorrer.
+
 ![step 5](https://github.com/clicksign/widget/blob/master/images/flow-5.png)
 
 # <a name="suporte"></a>Suporte
