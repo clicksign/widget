@@ -9,6 +9,8 @@
 - [Exemplo](#exemplo)
 
 # <a name="introducao"></a>Introdução
+
+
 # <a name="suporte"></a>Suporte
 # <a name="funcionamento"></a>Funcionamento
 # <a name="autenticacao"></a>Autenticação
@@ -17,7 +19,7 @@
 
 # <a name="exemplo"></a>Exemplo
 
-Na pasta `examples` há um exemplo de uso do widget escrito em
+Na diretório `examples` há um exemplo de uso do widget escrito em
 [ruby](ruby-lang.org).  Para iniciar o exemplo certifique-se de que estão
 instalados:
 
