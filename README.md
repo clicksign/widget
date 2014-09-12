@@ -23,7 +23,7 @@ O _widget_ é composto de 3 partes:
 2. Um _iframe_ que será criado pela biblioteca acima no _DOM_ de sua página;
 3. Um código _HTML_ que será o corpo do _iframe_ acima;
 
-## Passo 1: Carregar a biblioteca fornecida pela Clicksign
+## Passo 1: carregar a biblioteca
 
 A biblioteca _javascript_ da Clicksign precisa ser incluída no corpo da página.
 O arquivo pode ser copiado para seu próprio domínio ou você pode utilizar a CDN
@@ -35,7 +35,7 @@ nova versão da biblioteca.  Mais detalhas em [versão](#versao).
 
 ![step 1](https://github.com/clicksign/widget/blob/master/images/flow-1.png)
 
-## Passo 2: Carregar a biblioteca fornecida pela Clicksign
+## Passo 2: configurar o widget
 
 A biblioteca da Clicksign irá cria um objeto `clicksign` dentro do escopo
 padrão, `window`.  Para que o _widget_ seja montado dentro da página você
@@ -56,7 +56,7 @@ realizar as assinaturas em múltiplas requisições.
 
 ![step 4](https://github.com/clicksign/widget/blob/master/images/flow-4.png)
 
-## Passo 3: Capturando uma assinatura
+## Passo 3: capturar uma assinatura
 
 Para aplicações que necessitam _reagir_ a um evento de assinatura, o _widget_
 fornece uma chamada de _callback_ que será executada dentro do contexto da
