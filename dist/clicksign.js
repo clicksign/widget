@@ -109,7 +109,8 @@
   };
 
   this.clicksign || (this.clicksign = {
-    configure: configure
+    configure: configure,
+    vesion: 1
   });
 
 }).call(this);

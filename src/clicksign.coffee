@@ -52,4 +52,6 @@ configure = (options) ->
   attach_element(options.container, iframe)
   addEventListener(options.callback || ->)
 
-@clicksign ||= configure: configure
+@clicksign ||=
+  configure: configure
+  vesion: 1
