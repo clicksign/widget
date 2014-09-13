@@ -10,10 +10,10 @@
 
 # <a name="introducao"></a>Introdução
 
-Muitas vezes um documento precisa ser assinado dentro de um ponto específico de
-um determinado fluxo de uma aplicação.  Para isso a Clicksign desenvolveu um
-componente que pode ser instalado dentro de outras páginas eletrônicas.  Este
-tipo de componente é tradicionalmente chamado de **widget**.
+Muitas vezes um documento precisa ser assinado dentro de uma aplicação.  Para
+isso, a Clicksign desenvolveu um componente que pode ser instalado dentro de
+outras páginas eletrônicas.  Este tipo de componente é tradicionalmente chamado
+de **widget**.
 
 # <a name="funcionamento"></a>Funcionamento
 
@@ -27,7 +27,7 @@ O _widget_ é composto de 3 partes:
 
 A biblioteca _javascript_ da Clicksign precisa ser incluída no corpo da página.
 O arquivo pode ser copiado para seu próprio domínio ou você pode utilizar a CDN
-da Clicksign.  Recomendamos utilizar a CDN da Clicksign pois vocês será
+da Clicksign.  Recomendamos utilizar a CDN da Clicksign pois você será
 beneficiado pelas correções automáticas que efetuamos ao descobrir alguma falha
 na biblioteca.  Todas as correções visam manter compatibilidade dentro da mesma
 versão.  Uma alteração que quebre compatibilidade só pode ser efetuada em uma
@@ -90,8 +90,8 @@ abaixo listados:
 Se você utiliza algum navegador que não conste nesta lista não significa que o
 **widget** da Clicksign não funcionará adequadamente, significa apenas que não
 realizamos testes de compatibilidade com o navegador.  Caso seja necessário que
-a Clicksign suporte oficialmente o navegador, você pode solicitar que a equipe
-de desenvolvimente o adicione como um navegador homologado através de
+a Clicksign suporte oficialmente o navegador, solicite que a equipe de
+desenvolvimento o adicione como um navegador homologado através de
 suporte@clicksign.com.
 
 # <a name="autenticacao"></a>Autenticação
@@ -116,10 +116,11 @@ $ bundle install
 ```
 
 O servidor de exemplo utiliza API da Clicksign para realizar o _upload_ dos
-documentos e criar a lista de assinatura.  Para fazer uso desta aplicação vocês
-irá precisar de um **access token** configurado no servidor para o qual deseja
-enviar as requisições.  O **access token** é disponibilizado pela Clicksign para
-desenvolvedores que foram previamente autorizados.  O controle do **access
+documentos e criar a lista de assinatura.  Para fazer uso desta aplicação você
+precisa de um **access token** configurado no servidor para o qual deseja enviar
+as requisições.  O **access token** é disponibilizado pela Clicksign para
+desenvolvedores que foram previamente autorizados.  Para solicitar um **access
+token** envie um e-mail para suporte@clicksign.com. O controle do **access
 token** é feito através da variável de ambiente ```ACCESS_TOKEN```.
 
 A aplicação de exemplo pode ser configurada para acessar outro servidor que não
