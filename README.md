@@ -21,12 +21,6 @@ O uso do _widget_ traz as seguintes vantagens:
 - Evita a troca de contexto do usuário
 - Oferece uma experiência mais consistênte
 
-Porém traz uma nova dificuldade.  O documento já deve estar preparado para ser
-assinado, ou seja, o _upload_ e a prepação da lista de assinatura já devem ter
-sido executados.  Para isso, a Clicksign possui uma API pública onde você pode
-automatizar esse processo e integrar a parte da assinatura do seu cliente
-através do _widget_, aliando segurança à praticidade.
-
 Para facilitar a sua vida, a Clicksign já fez a parte difícil e programou um
 componente que extremamente simples de usar.  Apesar da facilidade, gostamos de
 deixar claro o que fazemos e como fazemos, por isto, na próxima seção explicamos
