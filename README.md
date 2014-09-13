@@ -37,7 +37,7 @@ nova versão da biblioteca.  Mais detalhas em [versão](#versao).
 
 ## Passo 2: configurar o widget
 
-A biblioteca da Clicksign irá cria um objeto `clicksign` dentro do escopo
+A biblioteca da Clicksign irá criar um objeto `clicksign` dentro do escopo
 padrão, `window`.  Para que o _widget_ seja montado dentro da página você
 necessita chamar a função `configure` no objeto `clicksign`.  Você pode conferir
 os parâmetros da função `configure` em [opções](#opcoes).
@@ -46,12 +46,12 @@ os parâmetros da função `configure` em [opções](#opcoes).
 
 Ao chamar a função `configure`, será adicionado um _iframe_ dentro de um dos
 elementos da página.  O _iframe_ irá carregar o conteúdo da Clicksign, este
-contúdo irá executar em contexto próprio, portanto nem o _widget_, nem a página
+conteúdo irá executar em contexto próprio, portanto nem o _widget_, nem a página
 que o carrega, podem manipular os elementos do outro.
 
 ![step 3](https://github.com/clicksign/widget/blob/master/images/flow-3.png)
 
-O _widget_ possui fluxo de navegação independete, isto possibilita à Clicksign
+O _widget_ possui fluxo de navegação independente, isto possibilita à Clicksign
 realizar as assinaturas em múltiplas requisições.
 
 ![step 4](https://github.com/clicksign/widget/blob/master/images/flow-4.png)
@@ -63,7 +63,7 @@ fornece uma chamada de _callback_ que será executada dentro do contexto da
 página.  Esta é a função do parâmetro `callback`.  Você pode conferir a
 utilização do parâmetro `callback` em [opções](#opcoes).
 
-O _callbac_ é implementado utilizando `postMessage`, por este motivo os
+O _callback_ é implementado utilizando `postMessage`, por este motivo os
 navegadores deverão suportar esta tecnologia para que o _callback_ possa
 ocorrer.
 
@@ -90,7 +90,7 @@ abaixo listados:
 Se você utiliza algum navegador que não conste nesta lista não significa que o
 **widget** da Clicksign não funcionará adequadamente, significa apenas que não
 realizamos testes de compatibilidade com o navegador.  Caso seja necessário que
-a Clicksign suporte oficialmente o navagador, você pode solicitar que a equipe
+a Clicksign suporte oficialmente o navegador, você pode solicitar que a equipe
 de desenvolvimente o adicione como um navegador homologado através de
 suporte@clicksign.com.
 
@@ -100,7 +100,7 @@ suporte@clicksign.com.
 
 # <a name="exemplo"></a>Exemplo
 
-Na diretório `examples` há um exemplo de uso do widget escrito em
+No diretório `examples` há um exemplo de uso do widget escrito em
 [ruby](ruby-lang.org).  Para iniciar o exemplo certifique-se de que estão
 instalados:
 
@@ -117,7 +117,7 @@ $ bundle install
 
 O servidor de exemplo utiliza API da Clicksign para realizar o _upload_ dos
 documentos e criar a lista de assinatura.  Para fazer uso desta aplicação vocês
-irá precisaar de um **access token** configurado no servidor para o qual deseja
+irá precisar de um **access token** configurado no servidor para o qual deseja
 enviar as requisições.  O **access token** é disponibilizado pela Clicksign para
 desenvolvedores que foram previamente autorizados.  O controle do **access
 token** é feito através da variável de ambiente ```ACCESS_TOKEN```.
@@ -129,7 +129,7 @@ _host_ que será direcionada as requisições é feito pela variável de ambient
 ```HOST```.  O _host_ padrão é ```widget.clicksign.com```.
 
 O protocolo de uso da API também pode ser configurado através da variável de
-ambiente ```PROTOCOL```.  O protocolo padrão é ```HTTPS````.
+ambiente ```PROTOCOL```.  O protocolo padrão é ```HTTPS```.
 
 |Variável    |Valor padrão        |Obrigatório|
 |------------|--------------------|:---------:|
