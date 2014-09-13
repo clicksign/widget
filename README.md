@@ -143,11 +143,11 @@ possuem valores padrão adequados para o ambiente de produção.
 
 <dl>
   <dt>container</dt>
-  <dd>ID na DOM do elemento no qual o _iframe_ será inserido</dd>
+  <dd>ID na DOM do elemento no qual o iframe será inserido</dd>
   <dt>protocol</dt>
-  <dd>Protocolo a ser utilizado na montagem do _iframe_</dd>
+  <dd>Protocolo a ser utilizado na montagem do iframe</dd>
   <dt>host</dt>
-  <dd>Host a ser utilizado na montagem do _iframe_</dd>
+  <dd>Host a ser utilizado na montagem do iframe</dd>
   <dt>key</dt>
   <dd>Chave do documento a ser assinado</dd>
   <dt>signer.email</dt>
@@ -157,9 +157,9 @@ possuem valores padrão adequados para o ambiente de produção.
   <dt>signer.documentation</dt>
   <dd>CPF do signatário para ser auto-preenchido</dd>
   <dt>width</dt>
-  <dd>Largura em _pixels_ do _iframe_</dd>
+  <dd>Largura em pixels do iframe</dd>
   <dt>height</dt>
-  <dd>Altura em _pixels_ do _iframe_</dd>
+  <dd>Altura em pixels do iframe</dd>
 </dl>
 
 Segue abaixo um exemplo de como essa chamada poderia ser realizada para montar
