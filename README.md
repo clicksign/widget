@@ -152,7 +152,7 @@ possuem valores padrão adequados para o ambiente de produção.
   <dd>Chave do documento a ser assinado</dd>
   <dt>signer.email</dt>
   <dd>E-mail do signatário</dd>
-  <dt>signer.display\_name</dt>
+  <dt>signer.display_name</dt>
   <dd>Nome signatário para ser auto-preenchido</dd>
   <dt>signer.documentation</dt>
   <dd>CPF do signatário para ser auto-preenchido</dd>
