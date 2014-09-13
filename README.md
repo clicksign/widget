@@ -13,9 +13,7 @@
 Muitas vezes um documento precisa ser assinado dentro de uma aplicação.  Para
 isso, a Clicksign desenvolveu um componente que pode ser instalado dentro de
 outras páginas eletrônicas.  Este tipo de componente é tradicionalmente chamado
-de **widget**.
-
-O uso do _widget_ traz as seguintes vantagens:
+de **widget**.  O uso do _widget_ traz as seguintes vantagens:
 
 - Não interrompe um fluxo em andamento
 - Evita a troca de contexto do usuário
