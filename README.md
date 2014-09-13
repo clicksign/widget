@@ -125,6 +125,62 @@ _token_.
 
 # <a name="opcoes"></a>Opções
 
+A realizar a configuração você pode parametrizar alguns propriedades do
+_widget_.  A parametrização de algumas propriedades é obrigatória, outras
+possuem valores padrão adequados para o ambiente de produção.
+
+|Propriedade         |Obrigatório|Opções            |Valor padrão        |
+|--------------------|:---------:|------------------|--------------------|
+|container           |x          |DOM ID            |                    |
+|key                 |x          |                  |                    |
+|signer.email        |x          |E-mail            |                    |
+|signer.display\_name|           |                  |                    |
+|signer.documentation|           |                  |                    |
+|protocol            |           |HTTP ou HTTPS     |HTTP                |
+|host                |           |URL               |widget.clicksign.com|
+|width               |           |600+              |800                 |
+|height              |           |500+              |600                 |
+
+<dl>
+  <dt>container</dt>
+  <dd>ID na DOM do elemento no qual o _iframe_ será inserido</dd>
+  <dt>protocol</dt>
+  <dd>Protocolo a ser utilizado na montagem do _iframe_</dd>
+  <dt>host</dt>
+  <dd>Host a ser utilizado na montagem do _iframe_</dd>
+  <dt>key</dt>
+  <dd>Chave do documento a ser assinado</dd>
+  <dt>signer.email</dt>
+  <dd>E-mail do signatário</dd>
+  <dt>signer.display\_name</dt>
+  <dd>Nome signatário para ser auto-preenchido</dd>
+  <dt>signer.documentation</dt>
+  <dd>CPF do signatário para ser auto-preenchido</dd>
+  <dt>width</dt>
+  <dd>Largura em _pixels_ do _iframe_</dd>
+  <dt>height</dt>
+  <dd>Altura em _pixels_ do _iframe_</dd>
+</dl>
+
+Segue abaixo um exemplo de como essa chamada poderia ser realizada para montar
+um _wiget_ dentro do elemento do DOM ID ```signature-box``` para o usuário com
+e-mail ```john.dow@example.com``` assinar no ambiente de demonstração com
+largura de 900 _pixels_ e altura de 1000 _pixels_.
+
+```javascript
+clicksign.configure({
+  container: "signature-box",
+  key: "0123-4567-89AB-CDEF",
+  signer: {
+    email: "john.doe@example.com",
+    display_name: "John Doe",
+    documentation: "01234567890"
+  },
+  host: "widget.clicksign-demo.com",
+  width: 900
+  height: 1000
+```
+
 # <a name="versao"></a>Versão
 
 O controle de versão do _widget_ é realizado através da arquivo _javascript_ que
