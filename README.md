@@ -37,7 +37,7 @@ na biblioteca.  Todas as correções visam manter compatibilidade dentro da mesm
 versão.  Uma alteração que quebre compatibilidade só pode ser efetuada em uma
 nova versão da biblioteca.  Mais detalhas em [versão](#versao).
 
-![step 1](https://github.com/clicksign/widget/blob/master/images/flow-1.png)
+![Load](https://github.com/clicksign/widget/blob/master/images/flow-1.png)
 
 ## Passo 2: configurar o _widget_
 
@@ -46,19 +46,19 @@ padrão, `window`.  Para que o _widget_ seja montado dentro da página você
 necessita chamar a função `configure` no objeto `clicksign`.  Você pode conferir
 os parâmetros da função `configure` nas [opções](#opcoes).
 
-![step 2](https://github.com/clicksign/widget/blob/master/images/flow-2.png)
+![Configure](https://github.com/clicksign/widget/blob/master/images/flow-2.png)
 
 Ao chamar a função `configure`, será adicionado um _iframe_ dentro de um dos
 elementos da página.  O _iframe_ irá carregar o conteúdo da Clicksign, este
 conteúdo irá executar em contexto próprio, portanto nem o _widget_, nem a página
 que o carrega, podem manipular os elementos do outro.
 
-![step 3](https://github.com/clicksign/widget/blob/master/images/flow-3.png)
+![Iframe](https://github.com/clicksign/widget/blob/master/images/flow-3.png)
 
 O _widget_ possui fluxo de navegação independente, isto possibilita à Clicksign
 realizar as assinaturas em múltiplas requisições.
 
-![step 4](https://github.com/clicksign/widget/blob/master/images/flow-4.png)
+![Fluxo](https://github.com/clicksign/widget/blob/master/images/flow-4.png)
 
 ## Passo 3: capturar uma assinatura
 
@@ -67,11 +67,7 @@ fornece uma chamada de _callback_ que será executada dentro do contexto da
 página.  Esta é a função do parâmetro `callback`.  Você pode conferir a
 utilização do parâmetro `callback` nas [opções](#opcoes).
 
-O _callback_ é implementado utilizando `postMessage`, por este motivo os
-navegadores deverão suportar esta tecnologia para que o _callback_ possa
-ocorrer.
-
-![step 5](https://github.com/clicksign/widget/blob/master/images/flow-5.png)
+![Assinatura](https://github.com/clicksign/widget/blob/master/images/flow-5.png)
 
 # <a name="suporte"></a>Suporte
 
