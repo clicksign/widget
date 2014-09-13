@@ -20,13 +20,12 @@ de **widget**.  O uso do _widget_ traz as seguintes vantagens:
 - Oferece uma experiência mais consistênte
 
 Para facilitar a sua vida, a Clicksign já fez a parte difícil e programou um
-componente que extremamente simples de usar.  Apesar da facilidade, gostamos de
-deixar claro o que fazemos e como fazemos, por isto, na próxima seção explicamos
-detalhadamente como nosso componente funciona.  Caso você deseje compreender a
-fundo o funcionamento do _widget_, seu código fonte está disponível em
-```src/``` e o resultado da compilação em ```dist/```.  Sinta-se livre para
-propor melhorias, corrigir _bugs_ ou apenas questionar o desenvolvimento através
-da [página do projeto](https://github.com/clicksign/widget).
+componente extremamente simples de usar que realiza as partes mais complicadas
+desse processo.  Apesar da facilidade, gostamos de deixar claro o que fazemos e
+como fazemos, por isto, na próxima seção explicaremos como nosso componente
+funciona.  Sinta-se livre para propor melhorias, analisar o código fonte ou
+apenas questionar o desenvolvimento através da [página do
+projeto](https://github.com/clicksign/widget).
 
 # <a name="funcionamento"></a>Funcionamento
 
@@ -108,8 +107,41 @@ desenvolvimento o adicione como um navegador homologado através de
 suporte@clicksign.com.
 
 # <a name="autenticacao"></a>Autenticação
+
+A autenticação do usuário é realizada através de um **token** enviado ao e-mail
+que foi solicitado a assinatura.  Apenas desta forma nós podemos nos certifica
+de que é o dono do e-mail quem está tentado realizar a assinatura.
+
+O _token_ é gerado e enviado através da Clicksign no momento em que o conteúdo
+do _iframe_ é solicitado aos nossos servidores.  Abaixo segue um diagrama
+  representando o momento e o algoritmo utilizado.
+
+![Email](https://github.com/clicksign/widget/blob/master/images/flow-7.png)
+
+O _token_ é composto de 4 letras, exceto vogais.  Ele possui duração de 10
+minutos, após este período, caso o _widget_ seja recarregado, um novo _token_
+será gerado e enviado, o mesmo ocorre caso o usuário solicitar o reenvio do
+_token_.
+
 # <a name="opcoes"></a>Opções
+
 # <a name="versao"></a>Versão
+
+O controle de versão do _widget_ é realizado através da arquivo _javascript_ que
+você carregar na aplição.  Utilizamos apenas um único número para controle de
+versão, caso houver alguma quebra de funcionalidade, o número da versão será
+acrescido em um, do contrário, apenas atualizaremos a versão disponível, p.e.:
+
+|Alteração                                |Versão|
+|-----------------------------------------|:----:|
+|Versão atual                             |1     |
+|Correção de bug em callback              |1     |
+|Adição callbacks para casos de erro      |1     |
+|Alteração de ordem de chamado de callback|2     |
+
+O nome do arquivo determina a versão, p.e.: ```clicksign-v1.js``` é a versão 1,
+```clicksign-v2.js``` e a versão 2. Você também pode utilizar a propriedade
+```version``` do objeto ```clicksign```.  
 
 # <a name="exemplo"></a>Exemplo
 
