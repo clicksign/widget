@@ -15,6 +15,27 @@ isso, a Clicksign desenvolveu um componente que pode ser instalado dentro de
 outras páginas eletrônicas.  Este tipo de componente é tradicionalmente chamado
 de **widget**.
 
+O uso do _widget_ traz as seguintes vantagens:
+
+- Não interrompe um fluxo em andamento
+- Evita a troca de contexto do usuário
+- Oferece uma experiência mais consistênte
+
+Porém traz uma nova dificuldade.  O documento já deve estar preparado para ser
+assinado, ou seja, o _upload_ e a prepação da lista de assinatura já devem ter
+sido executados.  Para isso, a Clicksign possui uma API pública onde você pode
+automatizar esse processo e integrar a parte da assinatura do seu cliente
+através do _widget_, aliando segurança à praticidade.
+
+Para facilitar a sua vida, a Clicksign já fez a parte difícil e programou um
+componente que extremamente simples de usar.  Apesar da facilidade, gostamos de
+deixar claro o que fazemos e como fazemos, por isto, na próxima seção explicamos
+detalhadamente como nosso componente funciona.  Caso você deseje compreender a
+fundo o funcionamento do _widget_, seu código fonte está disponível em
+```src/``` e o resultado da compilação em ```dist/```.  Sinta-se livre para
+propor melhorias, corrigir _bugs_ ou apenas questionar o desenvolvimento através
+da [página do projeto](https://github.com/clicksign/widget).
+
 # <a name="funcionamento"></a>Funcionamento
 
 O _widget_ é composto de 3 partes:
@@ -100,7 +121,7 @@ suporte@clicksign.com.
 
 # <a name="exemplo"></a>Exemplo
 
-No diretório `examples` há um exemplo de uso do widget escrito em
+No diretório ```examples/``` há um exemplo de uso do widget escrito em
 [ruby](ruby-lang.org).  Para iniciar o exemplo certifique-se de que estão
 instalados:
 
