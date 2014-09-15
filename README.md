@@ -183,7 +183,7 @@ clicksign.configure({
     documentation: "01234567890"
   },
   host: "widget.clicksign-demo.com",
-  width: 900
+  width: 900,
   height: 1000
 })
 ```
