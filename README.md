@@ -47,7 +47,7 @@ da Clicksign.  Recomendamos utilizar a CDN da Clicksign pois você será
 beneficiado pelas correções automáticas que efetuamos ao descobrir alguma falha
 na biblioteca.  Todas as correções visam manter compatibilidade dentro da mesma
 versão.  Uma alteração que quebre compatibilidade só pode ser efetuada em uma
-nova versão da biblioteca.  Mais detalhas em [versão](#versao).
+nova versão da biblioteca.  Mais detalhes em [versão](#versao).
 
 ![Carregando a
 biblioteca](https://raw.githubusercontent.com/clicksign/widget/master/images/flow-1.png)
@@ -114,7 +114,7 @@ suporte@clicksign.com.
 # <a name="autenticacao"></a>Autenticação
 
 A autenticação do usuário é realizada através de um **token** enviado ao e-mail
-que foi solicitado a assinatura.  Apenas desta forma nós podemos nos certifica
+que foi solicitado a assinatura.  Apenas desta forma nós podemos nos certificar
 de que é o dono do e-mail quem está tentado realizar a assinatura.
 
 O _token_ é gerado e enviado através da Clicksign no momento em que o conteúdo
@@ -185,6 +185,7 @@ clicksign.configure({
   host: "widget.clicksign-demo.com",
   width: 900
   height: 1000
+})
 ```
 
 # <a name="versao"></a>Versão
@@ -208,7 +209,7 @@ O nome do arquivo determina a versão, p.e.: ```clicksign-v1.js``` é a versão 
 # <a name="exemplo"></a>Exemplo
 
 No diretório ```examples/``` há um exemplo de uso do widget escrito em
-[ruby](ruby-lang.org).  Para iniciar o exemplo certifique-se de que estão
+[ruby](http://ruby-lang.org).  Para iniciar o exemplo certifique-se de que estão
 instalados:
 
 - Ruby 2.1.2
