@@ -4,7 +4,6 @@ require 'coffee_script'
 require 'rest_client'
 require 'json'
 require 'ostruct'
-require 'pry'
 
 configure do
   set :access_token, ENV['ACCESS_TOKEN']
