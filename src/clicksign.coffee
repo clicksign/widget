@@ -21,7 +21,7 @@ path_for = (key) -> "/documents/#{key}"
 query_for = (signer = {}) ->
   options = { origin: origin }
   options[k] = v for k, v of signer
-  ("#{k}=#{encodeURIComponent(v)}" for k, v of options).join("&")
+  "?" + ("#{k}=#{encodeURIComponent(v)}" for k, v of options).join("&")
 
 create_iframe = (source, width, height) ->
   min = (m) -> (v) -> if v < m then m else v

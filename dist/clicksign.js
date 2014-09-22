@@ -60,7 +60,7 @@
       v = signer[k];
       options[k] = v;
     }
-    return ((function() {
+    return "?" + ((function() {
       var _results;
       _results = [];
       for (k in options) {
