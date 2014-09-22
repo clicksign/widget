@@ -81,6 +81,10 @@ helpers do
   end
 end
 
+get "/stat" do
+  "ok"
+end
+
 # Index all documents related to access token
 get "/" do
   @documents = get_documents
