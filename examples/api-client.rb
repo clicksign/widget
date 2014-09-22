@@ -1,3 +1,4 @@
+require 'cgi'
 require 'sinatra'
 require 'haml'
 require 'coffee_script'

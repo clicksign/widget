@@ -26,7 +26,7 @@
       - @document.list.signatures.each do |signature|
         %tr
           %td
-            %a(href="/#{@document.key}/widget?email=#{signature.email}")
+            %a(href="/#{@document.key}/widget?email=#{CGI.escape(signature.email)}")
               = signature.email
           %td= signature.act
           %td= signature.display_name
