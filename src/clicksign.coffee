@@ -19,7 +19,9 @@ protocol_for = (protocol) -> (protocol || PROTOCOL) + "://"
 host_for = (host) -> host || HOST
 path_for = (key) -> "/documents/#{key}"
 query_for = (signer = {}) ->
-  "?origin=#{origin}&" + ("#{k}=#{v}" for k, v of signer).join("&")
+  options = { origin: origin }
+  options[k] = v for k, v of signer
+  "?" + ("#{k}=#{encodeURIComponent(v)}" for k, v of options).join("&")
 
 create_iframe = (source, width, height) ->
   min = (m) -> (v) -> if v < m then m else v

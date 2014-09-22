@@ -1,10 +1,10 @@
+require 'cgi'
 require 'sinatra'
 require 'haml'
 require 'coffee_script'
 require 'rest_client'
 require 'json'
 require 'ostruct'
-require 'pry'
 
 configure do
   set :access_token, ENV['ACCESS_TOKEN']
@@ -80,6 +80,10 @@ helpers do
   def create_list(key, signers)
     document(JSON[api_create_list(key, signers)]['document'])
   end
+end
+
+get "/stat" do
+  "ok"
 end
 
 # Index all documents related to access token

@@ -49,16 +49,23 @@
   };
 
   query_for = function(signer) {
-    var k, v;
+    var k, options, v;
     if (signer == null) {
       signer = {};
     }
-    return ("?origin=" + origin + "&") + ((function() {
+    options = {
+      origin: origin
+    };
+    for (k in signer) {
+      v = signer[k];
+      options[k] = v;
+    }
+    return ((function() {
       var _results;
       _results = [];
-      for (k in signer) {
-        v = signer[k];
-        _results.push("" + k + "=" + v);
+      for (k in options) {
+        v = options[k];
+        _results.push("" + k + "=" + (encodeURIComponent(v)));
       }
       return _results;
     })()).join("&");
