@@ -60,7 +60,7 @@
       v = signer[k];
       options[k] = v;
     }
-    return ((function() {
+    return "?" + ((function() {
       var _results;
       _results = [];
       for (k in options) {
@@ -117,7 +117,7 @@
 
   this.clicksign || (this.clicksign = {
     configure: configure,
-    vesion: 1
+    vesion: "1.0.rc1"
   });
 
 }).call(this);
