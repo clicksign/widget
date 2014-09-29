@@ -5,6 +5,7 @@
 - [Funcionamento](#funcionamento)
 - [Autenticação](#autenticacao)
 - [Opções](#opcoes)
+- [Callback](#callback)
 - [Versão](#versao)
 - [Exemplo](#exemplo)
 
@@ -17,7 +18,7 @@ de **widget**.  O uso do _widget_ traz as seguintes vantagens:
 
 - Não interrompe um fluxo em andamento
 - Evita a troca de contexto do usuário
-- Oferece uma experiência mais consistênte
+- Oferece maior consistência à experiência do usuário
 
 Para facilitar a sua vida, a Clicksign já fez a parte difícil e programou um
 componente extremamente simples de usar que realiza as partes mais complicadas
@@ -142,6 +143,7 @@ possuem valores padrão adequados para o ambiente de produção.
 |signer.email        |x          |E-mail            |                    |
 |signer.display\_name|           |                  |                    |
 |signer.documentation|           |                  |                    |
+|callback            |           |                  |function() {}       |
 |protocol            |           |HTTP ou HTTPS     |HTTP                |
 |host                |           |URL               |widget.clicksign.com|
 |width               |           |600+              |800                 |
@@ -150,10 +152,6 @@ possuem valores padrão adequados para o ambiente de produção.
 <dl>
   <dt>container</dt>
   <dd>ID na DOM do elemento no qual o iframe será inserido</dd>
-  <dt>protocol</dt>
-  <dd>Protocolo a ser utilizado na montagem do iframe</dd>
-  <dt>host</dt>
-  <dd>Host a ser utilizado na montagem do iframe</dd>
   <dt>key</dt>
   <dd>Chave do documento a ser assinado</dd>
   <dt>signer.email</dt>
@@ -162,6 +160,12 @@ possuem valores padrão adequados para o ambiente de produção.
   <dd>Nome signatário para ser auto-preenchido</dd>
   <dt>signer.documentation</dt>
   <dd>CPF do signatário para ser auto-preenchido</dd>
+  <dt>callback</dt>
+  <dd>Função que será chamada quando ocorrer algum evento no widget</dd>
+  <dt>protocol</dt>
+  <dd>Protocolo a ser utilizado na montagem do iframe</dd>
+  <dt>host</dt>
+  <dd>Host a ser utilizado na montagem do iframe</dd>
   <dt>width</dt>
   <dd>Largura em pixels do iframe</dd>
   <dt>height</dt>
@@ -186,6 +190,31 @@ clicksign.configure({
   width: 900,
   height: 1000
 })
+```
+
+# <a name="callback"></a>Callback
+
+Determinados eventos que ocorrem no __widget__ podem ser de interesse da
+aplicação que o utiliza.  A função __callback__ que é passada como parâmetro na
+configuração do __widget__ será executada quando algum desses eventos ocorrerem.
+Esta função é executada no contexto da aplicação que utiliza o __widget__, dessa
+forma você pode manipular sua DOM ou executar outras funções __javascript__
+no contexto da sua aplicação.
+
+Ao chamar a função __callback__ é passsado um único parâmetro à função, que
+consiste em uma __String__ com o nome do evento.  Atualmente os eventos
+possíveis são:
+
+- requested
+- signed
+
+Dessa forma você pode __filtrar__ os eventos que são de seu interessante, p.e.:
+
+```javascript
+callback = function(event) {
+  return if event != "signed";
+  alert("Documento asssinado!");
+}
 ```
 
 # <a name="versao"></a>Versão
