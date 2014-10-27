@@ -269,11 +269,11 @@ _host_ que será direcionada as requisições é feito pela variável de ambient
 O protocolo de uso da API também pode ser configurado através da variável de
 ambiente ```PROTOCOL```.  O protocolo padrão é ```HTTPS```.
 
-|Variável    |Valor padrão        |Obrigatório|
-|------------|--------------------|:---------:|
-|ACCESS_TOKEN|                    |x          |
-|HOST        |widget.clicksign.com|           |
-|PROTOCOL    |HTTPS               |           |
+|Variável    |Valor padrão |Obrigatório|
+|------------|-------------|:---------:|
+|ACCESS_TOKEN|             |x          |
+|HOST        |clicksign.com|           |
+|PROTOCOL    |HTTPS        |           |
 
 Para iniciar o servidor é necessário interpretar o arquivo ```api-client.rb```
 com o interpretador Ruby.  Segue abaixo um exemplo de como proceder em um
