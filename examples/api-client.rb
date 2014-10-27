@@ -130,7 +130,7 @@ end
 
 # Show a document widget
 get %r{/#{KEY}/widget$} do |key|
-  @document = get_document(key)
+  @key = key
   @email = params[:email]
 
   haml :widget
