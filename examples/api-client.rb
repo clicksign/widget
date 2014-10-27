@@ -6,6 +6,8 @@ require 'rest_client'
 require 'json'
 require 'ostruct'
 
+KEY = /(\h{8}-\h{4}-\h{4}-\h{4}-\h{12}|\h{4}-\h{4}-\h{4}-\h{4})/
+
 configure do
   set :access_token, ENV['ACCESS_TOKEN']
   set :protocol, ENV['PROTOCOL'] || "https"
@@ -107,13 +109,13 @@ post "/" do
 end
 
 # Show a specific document
-get %r{/(\h{4}-\h{4}-\h{4}-\h{4})$} do |key|
+get %r{/#{KEY}$} do |key|
   @document = get_document(key)
   haml :show
 end
 
 # Create signature list
-post %r{/(\h{4}-\h{4}-\h{4}-\h{4})/list} do |key|
+post %r{/#{KEY}/list$} do |key|
   emails = params[:emails].each_line.collect { |line| line.chomp.split(",") }
   signers = emails.collect { |email, act| { email: email, act: act }}
 
@@ -127,7 +129,7 @@ post %r{/(\h{4}-\h{4}-\h{4}-\h{4})/list} do |key|
 end
 
 # Show a document widget
-get %r{/(\h{4}-\h{4}-\h{4}-\h{4})/widget} do |key|
+get %r{/#{KEY}/widget$} do |key|
   @document = get_document(key)
   @email = params[:email]
 
