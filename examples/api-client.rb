@@ -132,9 +132,6 @@ end
 get %r{/#{KEY}/widget$} do |key|
   @document = get_document(key)
   @email = params[:email]
-  puts "---"
-  puts @email
-  puts "---"
 
   haml :widget
 end
