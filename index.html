@@ -43,7 +43,9 @@
 <li><a href="#callback">Callback</a></li>
 <li><a href="#versao">Versão</a></li>
 <li><a href="#exemplo">Exemplo</a></li>
-</ul><h1>
+</ul>
+
+<h1>
 <a name="introdu%C3%A7%C3%A3o" class="anchor" href="#introdu%C3%A7%C3%A3o"><span class="octicon octicon-link"></span></a>
 <a name="introducao"></a>Introdução</h1>
 
@@ -56,7 +58,9 @@ de <strong>widget</strong>.  O uso do <em>widget</em> traz as seguintes vantagen
 <li>Não interrompe um fluxo em andamento</li>
 <li>Evita a troca de contexto do usuário</li>
 <li>Oferece maior consistência à experiência do usuário</li>
-</ul><p>Para facilitar a sua vida, a Clicksign já fez a parte difícil e programou um
+</ul>
+
+<p>Para facilitar a sua vida, a Clicksign já fez a parte difícil e programou um
 componente extremamente simples de usar que realiza as partes mais complicadas
 desse processo.  Apesar da facilidade, gostamos de deixar claro o que fazemos e
 como fazemos, por isto, na próxima seção explicaremos como nosso componente
@@ -74,7 +78,9 @@ projeto</a>.</p>
 <li>Um biblioteca <em>javascript</em> que você deverá adicionar à sua página;</li>
 <li>Um <em>iframe</em> que será criado pela biblioteca acima no <em>DOM</em> de sua página;</li>
 <li>Um código <em>HTML</em> que será o corpo do <em>iframe</em> acima;</li>
-</ol><p>Abaixo iremos explicar como estes três componentes interagem para prover a
+</ol>
+
+<p>Abaixo iremos explicar como estes três componentes interagem para prover a
 funcionalidade esperada, bem como qual as etapas necessárias para você colocar o
 <em>widget</em> funcionando em sua aplicação.</p>
 
@@ -149,7 +155,9 @@ abaixo listados:</p>
 <li>Safari 7</li>
 <li>Opera 23</li>
 <li>Opera 24</li>
-</ul><p>Se você utiliza algum navegador que não conste nesta lista não significa que o
+</ul>
+
+<p>Se você utiliza algum navegador que não conste nesta lista não significa que o
 <em>widget</em> da Clicksign não funcionará adequadamente, significa apenas que não
 realizamos testes de compatibilidade com o navegador.  Caso seja necessário que
 a Clicksign suporte oficialmente o navegador, solicite que a equipe de
@@ -185,12 +193,14 @@ será gerado e enviado, o mesmo ocorre caso o usuário solicitar o reenvio do
 possuem valores padrão adequados para o ambiente de produção.</p>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Propriedade</th>
 <th align="center">Obrigatório</th>
 <th>Opções</th>
 <th>Valor padrão</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>container</td>
@@ -253,8 +263,10 @@ possuem valores padrão adequados para o ambiente de produção.</p>
 <td>600</td>
 </tr>
 </tbody>
-</table><dl>
-<dt>container</dt>
+</table>
+
+<dl>
+  <dt>container</dt>
   <dd>ID na DOM do elemento no qual o iframe será inserido</dd>
   <dt>key</dt>
   <dd>Chave do documento a ser assinado</dd>
@@ -274,7 +286,9 @@ possuem valores padrão adequados para o ambiente de produção.</p>
   <dd>Largura em pixels do iframe</dd>
   <dt>height</dt>
   <dd>Altura em pixels do iframe</dd>
-</dl><p>Segue abaixo um exemplo de como essa chamada poderia ser realizada para montar
+</dl>
+
+<p>Segue abaixo um exemplo de como essa chamada poderia ser realizada para montar
 um <em>wiget</em> dentro do elemento do DOM ID <code>signature-box</code> para o usuário com
 e-mail <code>john.dow@example.com</code> assinar no ambiente de demonstração com
 largura de 900 <em>pixels</em> e altura de 1000 <em>pixels</em>.</p>
@@ -311,7 +325,9 @@ possíveis são:</p>
 <ul>
 <li>requested</li>
 <li>signed</li>
-</ul><p>Dessa forma você pode <strong>filtrar</strong> os eventos que são de seu interessante, p.e.:</p>
+</ul>
+
+<p>Dessa forma você pode <strong>filtrar</strong> os eventos que são de seu interessante, p.e.:</p>
 
 <div class="highlight highlight-javascript"><pre><span class="nx">callback</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="k">if</span> <span class="nx">event</span> <span class="o">!=</span> <span class="s2">"signed"</span><span class="p">;</span>
@@ -329,10 +345,12 @@ versão, caso houver alguma quebra de funcionalidade, o número da versão será
 acrescido em um, do contrário, apenas atualizaremos a versão disponível, p.e.:</p>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Alteração</th>
 <th align="center">Versão</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>Versão atual</td>
@@ -351,7 +369,9 @@ acrescido em um, do contrário, apenas atualizaremos a versão disponível, p.e.
 <td align="center">2</td>
 </tr>
 </tbody>
-</table><p>O nome do arquivo determina a versão, p.e.: <code>clicksign-v1.js</code> é a versão 1,
+</table>
+
+<p>O nome do arquivo determina a versão, p.e.: <code>clicksign-v1.js</code> é a versão 1,
 <code>clicksign-v2.js</code> e a versão 2. Você também pode utilizar a propriedade
 <code>version</code> do objeto <code>clicksign</code>.  </p>
 
@@ -367,7 +387,9 @@ instalados:</p>
 <li>Ruby 2.1.2</li>
 <li>Rubygems</li>
 <li>Bundler</li>
-</ul><p>Instale as dependências:</p>
+</ul>
+
+<p>Instale as dependências:</p>
 
 <div class="highlight highlight-bash"><pre><span class="nv">$ </span><span class="nb">cd </span>examples/
 <span class="nv">$ </span>bundle install
@@ -391,11 +413,13 @@ realizar testes em outros ambientes, como <em>stage</em> ou <em>demo</em>.  O co
 ambiente <code>PROTOCOL</code>.  O protocolo padrão é <code>HTTPS</code>.</p>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>Variável</th>
 <th>Valor padrão</th>
 <th align="center">Obrigatório</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>ACCESS_TOKEN</td>
@@ -404,7 +428,7 @@ ambiente <code>PROTOCOL</code>.  O protocolo padrão é <code>HTTPS</code>.</p>
 </tr>
 <tr>
 <td>HOST</td>
-<td>widget.clicksign.com</td>
+<td>clicksign.com</td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -413,7 +437,9 @@ ambiente <code>PROTOCOL</code>.  O protocolo padrão é <code>HTTPS</code>.</p>
 <td align="center"></td>
 </tr>
 </tbody>
-</table><p>Para iniciar o servidor é necessário interpretar o arquivo <code>api-client.rb</code>
+</table>
+
+<p>Para iniciar o servidor é necessário interpretar o arquivo <code>api-client.rb</code>
 com o interpretador Ruby.  Segue abaixo um exemplo de como proceder em um
 terminal <em>Unix</em>.</p>
 
