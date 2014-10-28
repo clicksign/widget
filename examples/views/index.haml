@@ -4,7 +4,11 @@
 
   %input(type="submit" value="Upload")
 
-%ul
-  - @documents.each do |document|
-    %li
-      %a(href="/#{document['key']}")= document['original_name']
+%form(action="/batches" method="post")
+  %ul
+    - @documents.each do |document|
+      %li
+        %input(type="checkbox" name="keys[]" value="#{document['key']}")
+        %a(href="/#{document['key']}")= document['original_name']
+
+  %input(type="submit" value="Criar pacote")
