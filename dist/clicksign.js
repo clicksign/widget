@@ -45,7 +45,7 @@
   };
 
   path_for = function(key) {
-    return "/documents/" + key;
+    return "/" + key;
   };
 
   query_for = function(signer) {

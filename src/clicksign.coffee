@@ -17,7 +17,7 @@ origin = location.origin || "#{location.protocol}//#{location.host}"
 
 protocol_for = (protocol) -> (protocol || PROTOCOL) + "://"
 host_for = (host) -> host || HOST
-path_for = (key) -> "/documents/#{key}"
+path_for = (key) -> "/#{key}"
 query_for = (signer = {}) ->
   options = { origin: origin }
   options[k] = v for k, v of signer
