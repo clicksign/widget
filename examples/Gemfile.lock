@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    clicksign (0.0.2)
+      rest-client
     coffee-script (2.3.0)
       coffee-script-source
       execjs
@@ -9,8 +11,8 @@ GEM
     haml (4.0.5)
       tilt
     libv8 (3.16.14.7)
-    mime-types (2.3)
-    netrc (0.7.7)
+    mime-types (2.4.3)
+    netrc (0.8.0)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -31,6 +33,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  clicksign
   coffee-script (~> 2.3.0)
   haml (~> 4.0.5)
   libv8 (~> 3.16)

@@ -7,4 +7,4 @@
 %ul
   - @documents.each do |document|
     %li
-      %a(href="/#{document.key}")= document.original_name
+      %a(href="/#{document['key']}")= document['original_name']
