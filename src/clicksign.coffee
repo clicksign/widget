@@ -56,4 +56,4 @@ configure = (options) ->
 
 @clicksign ||=
   configure: configure
-  vesion: "1.0.rc1"
+  vesion: "1.0.rc2"
