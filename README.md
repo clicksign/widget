@@ -144,8 +144,8 @@ possuem valores padrão adequados para o ambiente de produção.
 |signer.display\_name|           |                  |                    |
 |signer.documentation|           |                  |                    |
 |callback            |           |                  |function() {}       |
-|protocol            |           |HTTP ou HTTPS     |HTTP                |
-|host                |           |URL               |widget.clicksign.com|
+|protocol            |           |HTTP ou HTTPS     |HTTPS               |
+|host                |           |URL               |clicksign.com       |
 |width               |           |600+              |800                 |
 |height              |           |500+              |600                 |
 
