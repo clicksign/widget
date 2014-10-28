@@ -40,7 +40,6 @@ get "/" do
   haml :index
 end
 
-require 'pry'
 # Upload a document
 post "/" do
   name = params[:archive][:filename]
@@ -74,4 +73,11 @@ get %r{/#{KEY}/widget$} do |key|
   @email = params[:email]
 
   haml :widget
+end
+
+post "/batches" do
+  keys = params[:keys]
+  @batch = Clicksign::Batch.create(keys)
+
+  haml :batch
 end
