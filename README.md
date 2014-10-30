@@ -97,8 +97,8 @@ abaixo listados:
 - Internet Explorer 9
 - Internet Explorer 10 
 - Internet Explorer 11
-- Chrome 36
 - Chrome 37
+- Chrome 38
 - Firefox 31
 - Firefox 32
 - Safari 7
