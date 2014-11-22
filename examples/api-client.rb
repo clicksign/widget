@@ -63,7 +63,7 @@ post %r{/#{KEY}/list$} do |key|
   emails = params[:emails].each_line.collect { |line| line.chomp.split(",") }
   signers = emails.collect { |email, act| { email: email, act: act }}
 
-  @document = Clicksign::Document.create_list(key, signers, false)['document']
+  @document = Clicksign::Document.create_list(key, signers, true)['document']
   redirect to("/#{@document['key']}"), 303
 end
 
