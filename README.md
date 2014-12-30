@@ -241,7 +241,7 @@ No diretório ```examples/``` há um exemplo de uso do widget escrito em
 [ruby](http://ruby-lang.org).  Para iniciar o exemplo certifique-se de que estão
 instalados:
 
-- Ruby 2.1.2
+- Ruby 2.1.4
 - Rubygems
 - Bundler
 
