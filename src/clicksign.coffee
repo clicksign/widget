@@ -56,9 +56,9 @@ configure = (options) ->
 
   attach_element(options.container, iframe)
   addEventListener(options.callback || ->)
-  checkTimeout = setTimeout ( ->
-    window.postMessage('timeout', origin)
-  ), timeout
+
+  trigger_timeout = -> window.postMessage('timeout', origin)
+  check_timeout = setTimeout trigger_timeout, timeout
   cancel_timeout = -> clearTimeout(checkTimeout)
   addEventListener(cancel_timeout)
 

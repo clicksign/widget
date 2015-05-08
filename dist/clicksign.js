@@ -110,7 +110,7 @@
   };
 
   configure = function(options) {
-    var cancel_timeout, checkTimeout, host, iframe, path, protocol, query, source, timeout;
+    var cancel_timeout, check_timeout, host, iframe, path, protocol, query, source, timeout, trigger_timeout;
     protocol = protocol_for(options.protocol);
     host = host_for(options.host);
     timeout = timeout_for(options.timeout);
@@ -120,9 +120,10 @@
     iframe = create_iframe(source, options.width, options.height);
     attach_element(options.container, iframe);
     addEventListener(options.callback || function() {});
-    checkTimeout = setTimeout((function() {
+    trigger_timeout = function() {
       return window.postMessage('timeout', origin);
-    }), timeout);
+    };
+    check_timeout = setTimeout(trigger_timeout, timeout);
     cancel_timeout = function() {
       return clearTimeout(checkTimeout);
     };
