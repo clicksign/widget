@@ -125,7 +125,7 @@
     };
     check_timeout = setTimeout(trigger_timeout, timeout);
     cancel_timeout = function() {
-      return clearTimeout(checkTimeout);
+      return clearTimeout(check_timeout);
     };
     return addEventListener(cancel_timeout);
   };
