@@ -58,7 +58,7 @@ configure = (options) ->
   addEventListener(options.callback || ->)
 
   trigger_timeout = -> window.postMessage('timeout', origin)
-  check_timeout = setTimeout trigger_timeout, timeout
+  check_timeout = setTimeout(trigger_timeout, timeout)
   cancel_timeout = -> clearTimeout(check_timeout)
   addEventListener(cancel_timeout)
 
