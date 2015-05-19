@@ -2,6 +2,7 @@ PROTOCOL = "https"
 HOST = "widget.clicksign.com"
 WIDTH = { MIN: 600, DEFAULT: 800 }
 HEIGHT = { MIN: 500, DEFAULT: 600 }
+TIMEOUT = 120000 # 2 minutes by default
 
 window = @
 
@@ -17,6 +18,7 @@ origin = location.origin || "#{location.protocol}//#{location.host}"
 
 protocol_for = (protocol) -> (protocol || PROTOCOL) + "://"
 host_for = (host) -> host || HOST
+timeout_for = (timeout) -> timeout || TIMEOUT
 path_for = (key) -> "/#{key}"
 query_for = (signer = {}) ->
   options = { origin: origin }
@@ -44,6 +46,7 @@ attach_element = (container, element) ->
 configure = (options) ->
   protocol = protocol_for(options.protocol)
   host = host_for(options.host)
+  timeout = timeout_for(options.timeout)
   path = path_for(options.key)
   query = query_for(options.signer)
 
@@ -53,6 +56,11 @@ configure = (options) ->
 
   attach_element(options.container, iframe)
   addEventListener(options.callback || ->)
+
+  trigger_timeout = -> window.postMessage('timeout', origin)
+  check_timeout = setTimeout(trigger_timeout, timeout)
+  cancel_timeout = -> clearTimeout(check_timeout)
+  addEventListener(cancel_timeout)
 
 @clicksign ||=
   configure: configure
