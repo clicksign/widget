@@ -64,4 +64,4 @@ configure = (options) ->
 
 @clicksign ||=
   configure: configure
-  vesion: "1.0.rc2"
+  version: "1.0.rc2"
