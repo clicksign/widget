@@ -117,7 +117,7 @@
 
   this.clicksign || (this.clicksign = {
     configure: configure,
-    vesion: "1.0.rc2"
+    version: "1.0.rc2"
   });
 
 }).call(this);
