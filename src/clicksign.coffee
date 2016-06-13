@@ -8,11 +8,17 @@ window = @
 
 getElementById = (name) -> document.getElementById(name)
 createElement = (element) -> document.createElement(element)
+
+callback_registered = false
 addEventListener = (callback) ->
+  return if callback_registered
+
   if window.addEventListener
     window.addEventListener('message', callback)
   else
     window.attachEvent('onmessage', callback)
+
+  callback_registered = true
 
 origin = location.origin || "#{location.protocol}//#{location.host}"
 
