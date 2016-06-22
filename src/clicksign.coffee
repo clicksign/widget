@@ -9,16 +9,20 @@ window = @
 getElementById = (name) -> document.getElementById(name)
 createElement = (element) -> document.createElement(element)
 
-callback_registered = false
+registered = false
+callback_fn = null
+
 addEventListener = (callback) ->
-  return if callback_registered
+  callback_fn = callback
+
+  return if registered
 
   if window.addEventListener
-    window.addEventListener('message', callback)
+    window.addEventListener('message', callback_fn)
   else
-    window.attachEvent('onmessage', callback)
+    window.attachEvent('onmessage', callback_fn)
 
-  callback_registered = true
+  registered = true
 
 origin = location.origin || "#{location.protocol}//#{location.host}"
 
