@@ -6,20 +6,18 @@
 %div
   Suspendisse libero purus, fringilla et laoreet eget, varius vitae nisi.
 
-%script(src="/javascripts/clicksign.js" type="text/javascript")
+%script(src='/javascripts/clicksign.js' type='text/javascript')
 
 :coffee
-  callback = (event) ->
-    alert "Callback called with: \#{event.data}"
+  callback = (ev) ->
+    alert 'Callback called with: ' + ev.data
 
-  clicksign.configure
-    container: "container"
-    key: "#{@key}"
-    protocol: "#{settings.protocol}"
-    host: "#{settings.widget_host}"
-    timeout: 15000
+  widget = clicksign.create 'container', '#{@key}',
+    endpoint: 'http://widget.clicksign.dev'
     signer:
-      email: "#{@email}"
-      display_name: "John Doe"
-      documentation: "01234567890"
-    callback: callback
+      email: '#{@email}'
+      display_name: 'John Doe'
+      documentation: '01234567890'
+    callbacks: [callback]
+
+  window.widget = widget
