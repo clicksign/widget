@@ -1,1 +1,0 @@
-clicksign-1.1.js
