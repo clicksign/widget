@@ -1,7 +1,8 @@
 ENDPOINT = 'https://widget.clicksign.com'
-WIDTH = 800
-HEIGHT = 600
+WIDTH = '100%'
+HEIGHT = '85vh'
 STYLE = 'border: 1px solid #777; border-radius: 3px;'
+DEFAULT_VERSION = '1'
 
 window = @
 
@@ -28,10 +29,11 @@ Widget = (container, key, options) ->
   @container = window.document.getElementById(container)
 
   @iframe = window.document.createElement('iframe')
-  @iframe.setAttribute('src', (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer))
-  @iframe.setAttribute('width', options.width || WIDTH)
-  @iframe.setAttribute('height', options.height || HEIGHT)
+  @iframe.setAttribute('src', (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION))
   @iframe.setAttribute('style', options.style || STYLE)
+
+  @iframe.style.width = options.width || WIDTH
+  @iframe.style.height = options.height || HEIGHT
 
   if window.addEventListener
     window.addEventListener('message', fn)
@@ -46,4 +48,4 @@ create = (container, key, options = {}) ->
 
 window.clicksign =
   create: create
-  version: '2.0-rc1'
+  version: '2.0-rc2'
