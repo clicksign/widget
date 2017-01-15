@@ -29,7 +29,12 @@ Widget = (container, key, options) ->
   @container = window.document.getElementById(container)
 
   @iframe = window.document.createElement('iframe')
-  @iframe.setAttribute('src', (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION))
+
+  _src = (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION)
+  _src += 'color1=' + options.main_color.replace(/#/,'%23') if options.main_color
+  _src += 'color2=' + options.header_color.replace(/#/,'%23') if options.header_color
+
+  @iframe.setAttribute('src', _src)
   @iframe.setAttribute('style', options.style || STYLE)
 
   @iframe.style.width = options.width || WIDTH
