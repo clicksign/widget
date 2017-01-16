@@ -62,12 +62,12 @@
     this.callbacks = options.callbacks || [];
     this.container = window.document.getElementById(container);
     this.iframe = window.document.createElement('iframe');
-    _src = (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION) + '&';
+    _src = (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION);
     if (options.main_color) {
-      _src += 'color1=' + options.main_color.replace(/#/, '%23');
+      _src += '&color1=' + options.main_color.replace(/#/, '%23');
     }
     if (options.header_color) {
-      _src += 'color2=' + options.header_color.replace(/#/, '%23');
+      _src += '&color2=' + options.header_color.replace(/#/, '%23');
     }
     this.iframe.setAttribute('src', _src);
     this.iframe.setAttribute('style', options.style || STYLE);
