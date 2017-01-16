@@ -91,7 +91,7 @@
 
   window.clicksign = {
     create: create,
-    version: '2.0-rc2'
+    version: '2.0-rc3'
   };
 
 }).call(this);
