@@ -29,7 +29,11 @@ Widget = (container, key, options) ->
   @container = window.document.getElementById(container)
 
   @iframe = window.document.createElement('iframe')
-  @iframe.setAttribute('src', (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION))
+
+  src = (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION)
+  src += '&' + params(options.colors) if options.colors
+
+  @iframe.setAttribute('src', src)
   @iframe.setAttribute('style', options.style || STYLE)
 
   @iframe.style.width = options.width || WIDTH
@@ -48,4 +52,4 @@ create = (container, key, options = {}) ->
 
 window.clicksign =
   create: create
-  version: '2.0-rc2'
+  version: '2.0-rc3'
