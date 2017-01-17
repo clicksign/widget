@@ -62,9 +62,9 @@
     this.callbacks = options.callbacks || [];
     this.container = window.document.getElementById(container);
     this.iframe = window.document.createElement('iframe');
-    src = (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION) + '&';
+    src = (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION);
     if (options.colors) {
-      src += params(options.colors);
+      src += '&' + params(options.colors);
     }
     this.iframe.setAttribute('src', src);
     this.iframe.setAttribute('style', options.style || STYLE);

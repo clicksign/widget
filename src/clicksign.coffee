@@ -30,8 +30,8 @@ Widget = (container, key, options) ->
 
   @iframe = window.document.createElement('iframe')
 
-  src = (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION) + '&'
-  src += params(options.colors) if options.colors
+  src = (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION)
+  src += '&' + params(options.colors) if options.colors
 
   @iframe.setAttribute('src', src)
   @iframe.setAttribute('style', options.style || STYLE)
