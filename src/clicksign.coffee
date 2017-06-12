@@ -9,7 +9,7 @@ window = @
 params = (data = {}) ->
   options = {}
   options[k] = v for k, v of data
-  options.origin = window.location.protocol + '//' + window.location.host
+  options.origin ||= window.location.protocol + '//' + window.location.host
 
   ([k, encodeURIComponent(v)].join('=') for k, v of options).join('&')
 
