@@ -67,7 +67,7 @@
       src += '&' + params(options.colors);
     }
     if (options.scroll) {
-      src += '&' + params(options.scroll);
+      src += '&scroll=' + params(options.scroll);
     }
     this.iframe.setAttribute('src', src);
     this.iframe.setAttribute('style', options.style || STYLE);

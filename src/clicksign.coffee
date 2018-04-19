@@ -32,7 +32,7 @@ Widget = (container, key, options) ->
 
   src = (options.endpoint || ENDPOINT) + '/' + key + '?' + params(options.signer) + '&v=' + (options.version || DEFAULT_VERSION)
   src += '&' + params(options.colors) if options.colors
-  src += '&' + params(options.scroll) if options.scroll
+  src += '&scroll=' + params(options.scroll) if options.scroll
 
   @iframe.setAttribute('src', src)
   @iframe.setAttribute('style', options.style || STYLE)
