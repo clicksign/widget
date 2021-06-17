@@ -286,3 +286,7 @@ $ ACCESS_TOKEN=seu-token ruby api-client.rb
 
 O servidor de exemplo executará um _bind_ na **porta 4567**.  Você poderá
 acessa-lo em [http://localhost:4567](http://localhost:4567).
+
+## Atendimento
+
+Em caso de dúvidas ou problemas, envie um e-mail para suporte@clicksign.com.
