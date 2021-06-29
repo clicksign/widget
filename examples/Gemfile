@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.4'
 
 gem 'sinatra', '~> 1.4.5'
-gem 'haml', '~> 4.0.5'
+gem 'haml', '~> 5.0.0'
 gem 'rest-client', '~> 1.7'
 gem 'coffee-script', '~> 2.3.0'
 gem 'libv8', '~> 3.16'
