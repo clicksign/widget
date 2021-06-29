@@ -17,7 +17,7 @@ GEM
     libv8 (3.16.14.7)
     mime-types (2.99.3)
     netrc (0.11.0)
-    rack (1.6.10)
+    rack (1.6.13)
     rack-protection (1.5.5)
       rack
     ref (1.0.5)
