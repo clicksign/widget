@@ -1,21 +1,21 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    clicksign (0.0.2)
-      rest-client
-    coffee-script (2.3.0)
+    clicksign (0.2.2)
+      rest-client (>= 1.8)
+    coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.8.0)
-    domain_name (0.5.20180417)
+    coffee-script-source (1.12.2)
+    domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    execjs (2.2.1)
+    execjs (2.8.1)
     haml (5.2.1)
       temple (>= 0.8.0)
       tilt
-    http-cookie (1.0.3)
+    http-cookie (1.0.4)
       domain_name (~> 0.5)
-    libv8 (3.16.14.7)
+    libv8 (3.16.14.19-x86_64-linux)
     mime-types (2.99.3)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
@@ -23,7 +23,7 @@ GEM
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
-    ref (1.0.5)
+    ref (2.0.0)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -35,20 +35,20 @@ GEM
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
     temple (0.8.2)
-    therubyracer (0.12.1)
-      libv8 (~> 3.16.14.0)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
       ref
     tilt (2.0.10)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.5)
+    unf_ext (0.0.7.7)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   clicksign
-  coffee-script (~> 2.3.0)
+  coffee-script (~> 2.4.1)
   haml (>= 5.0.0)
   libv8 (~> 3.16)
   rest-client (~> 1.7)
@@ -56,7 +56,7 @@ DEPENDENCIES
   therubyracer (~> 0.12)
 
 RUBY VERSION
-   ruby 2.7.3p183
+   ruby 3.0.1p64
 
 BUNDLED WITH
-   1.16.1
+   2.2.15
