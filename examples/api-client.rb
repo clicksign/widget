@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'cgi'
 require 'sinatra'
 require 'haml'
 require 'coffee_script'
-require 'rest_client'
+require 'rest-client'
 require 'json'
 require 'ostruct'
 require 'clicksign'
@@ -11,8 +13,8 @@ KEY = /(\h{8}-\h{4}-\h{4}-\h{4}-\h{12}|\h{4}-\h{4}-\h{4}-\h{4})/
 
 configure do
   set :access_token, ENV['ACCESS_TOKEN']
-  set :protocol, ENV['PROTOCOL'] || "https"
-  set :host, ENV['HOST'] || "clicksign-demo.com"
+  set :protocol, ENV['PROTOCOL'] || 'https'
+  set :host, ENV['HOST'] || 'clicksign-demo.com'
   set :api_host, "api.#{settings.host}"
   set :widget_host, "widget.#{settings.host}"
 
@@ -25,8 +27,8 @@ end
 helpers do
   def materialize(tempname, tempfile)
     filename = "tmp/#{tempname}"
-    File.open(filename, "wb") { |file| file.write(tempfile.read) }
-    file = File.open(filename, "rb")
+    File.open(filename, 'wb') { |file| file.write(tempfile.read) }
+    file = File.open(filename, 'rb')
 
     yield(file)
   ensure
@@ -35,13 +37,13 @@ helpers do
 end
 
 # Index all documents related to access token
-get "/" do
+get '/' do
   @documents = Clicksign::Document.all.collect { |hash| hash['document'] }
   haml :index
 end
 
 # Upload a document
-post "/" do
+post '/' do
   name = params[:archive][:filename]
   temp = params[:archive][:tempfile]
 
@@ -53,13 +55,13 @@ post "/" do
 end
 
 # Show a specific document
-get %r{/#{KEY}$} do |key|
+get %r{/#{KEY}$}, mustermann_opts: { type: :regexp, check_anchors: false } do |key|
   @document = Clicksign::Document.find(key)['document']
   haml :show
 end
 
 # Create signature list
-post %r{/#{KEY}/list$} do |key|
+post %r{/#{KEY}/list$}, mustermann_opts: { type: :regexp, check_anchors: false } do |key|
   emails = params[:emails].each_line.collect { |line| line.chomp.split(",") }
   signers = emails.collect { |email, act| { email: email, act: act }}
 
@@ -68,14 +70,14 @@ post %r{/#{KEY}/list$} do |key|
 end
 
 # Show a document widget
-get %r{/#{KEY}/widget$} do |key|
+get %r{/#{KEY}/widget$}, mustermann_opts: { type: :regexp, check_anchors: false } do |key|
   @key = key
   @email = params[:email]
 
   haml :widget
 end
 
-post "/batches" do
+post '/batches' do
   keys = params[:keys]
   @batch = Clicksign::Batch.create(keys)
 
