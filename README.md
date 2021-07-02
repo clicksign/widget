@@ -95,7 +95,7 @@ mercado.  Realizamos testes de compatibilidade com os seguintes navegadores
 abaixo listados:
 
 - Internet Explorer 9
-- Internet Explorer 10 
+- Internet Explorer 10
 - Internet Explorer 11
 - Chrome 37
 - Chrome 38
@@ -233,7 +233,7 @@ acrescido em um, do contrário, apenas atualizaremos a versão disponível, p.e.
 
 O nome do arquivo determina a versão, p.e.: ```clicksign-v1.js``` é a versão 1,
 ```clicksign-v2.js``` e a versão 2. Você também pode utilizar a propriedade
-```version``` do objeto ```clicksign```.  
+```version``` do objeto ```clicksign```.
 
 # <a name="exemplo"></a>Exemplo
 
@@ -241,9 +241,9 @@ No diretório ```examples/``` há um exemplo de uso do widget escrito em
 [ruby](http://ruby-lang.org).  Para iniciar o exemplo certifique-se de que estão
 instalados:
 
-- Ruby 2.1.4
+- Ruby 3.0.1
 - Rubygems
-- Bundler
+- Bundler 2
 
 Instale as dependências:
 
