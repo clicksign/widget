@@ -6,6 +6,7 @@
 - Adiciona flag scroll
 - Adiciona opção de origin
 - Customizable widget
+- Remove pasta de exemplos
 
 # v2.0.0
 
